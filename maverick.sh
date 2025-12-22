@@ -16,14 +16,14 @@ check_xcode_tools
 
 install_homebrew() {
     if ! command -v brew &> /dev/null; then
-        log "Installing Homebrew"
+        echo "Installing Homebrew"
         /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
         # Add Homebrew to PATH
         echo 'eval "$(/opt/homebrew/bin/brew shellenv)"' >> ~/.zprofile
         eval "$(/opt/homebrew/bin/brew shellenv)"
     else
-        log "Homebrew already installed"
+        echo "Homebrew already installed"
     fi
 
     # Update Homebrew
